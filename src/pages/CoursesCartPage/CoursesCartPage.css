@@ -1,0 +1,27 @@
+.basket__wrapper {
+    display       : flex;
+    flex-direction: column;
+    flex-wrap     : nowrap;
+    width         : 860px;
+    min-height    : 62vh;
+    margin        : 0 auto;
+}
+
+.basket__title {
+    color       : #FFFFFF;
+    font-family : 'Montserrat';
+    font-style  : normal;
+    font-weight : 700;
+    font-size   : 24px;
+    line-height : 38px;
+    display     : inline-block;
+    width       : 700px;
+    height      : 52vh;
+    font-stretch: 100%;
+
+}
+
+.basket__wrapperItems {
+    display       : flex;
+    flex-direction: column;
+}

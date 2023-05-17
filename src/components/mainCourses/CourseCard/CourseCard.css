@@ -1,0 +1,83 @@
+.card {
+    width : 312px;
+    height: 552px;
+    border: 1px solid #D58C51;
+    color : #FFFFFF;
+}
+
+.card:hover {
+    color: #D58C51;
+}
+
+.card__wrapper {
+    display       : flex;
+    flex-direction: column;
+    padding       : 43px 21px 30px 21px;
+}
+
+.card__image {
+    width        : 270px;
+    height       : 271px;
+    margin-bottom: 30px;
+}
+
+.card__title {
+    font-family  : 'Montserrat';
+    font-style   : normal;
+    font-weight  : 500;
+    font-size    : 17px;
+    line-height  : 21px;
+    height       : 42px;
+    display      : inline-block;
+    margin-bottom: 8px;
+    width        : 100%;
+}
+
+.card__description {
+    font-family: 'Montserrat';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+    line-height: 17px;
+    height     : 68px;
+}
+
+.card__nav {
+    width          : 100%;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    align-items    : center;
+    margin-top     : 28px;
+}
+
+.card__value {
+    font-family: 'Montserrat';
+    font-style : normal;
+    font-weight: 500;
+    font-size  : 17px;
+    line-height: 21px;
+    display    : inline-block;
+    width      : 90%;
+}
+
+.card__value>span {
+    font-family: 'Montserrat';
+    font-style : normal;
+    font-weight: 400;
+    font-size  : 14px;
+    line-height: 17px;
+}
+
+.card__add {
+    width           : 30px;
+    height          : 30px;
+    border-radius   : 50%;
+    background-color: transparent;
+    border          : 1px solid #FFFFFF;
+}
+
+.card__add:hover {
+    background-color: #D58C51;
+    cursor          : pointer;
+}

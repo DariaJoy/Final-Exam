@@ -1,0 +1,17 @@
+.wrapper {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    flex-wrap      : nowrap;
+    width          : 1440px;
+    height         : 100vh;
+}
+
+.wrapper__products {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : wrap;
+    row-gap        : 30px;
+    justify-content: space-between;
+    padding-bottom : 70px;
+}

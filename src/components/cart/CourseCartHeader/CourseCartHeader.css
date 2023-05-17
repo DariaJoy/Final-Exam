@@ -1,0 +1,46 @@
+.basket__wrapperHeader {
+    width          : 1391px;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    padding-bottom : 81px;
+    padding-top    : 54px;
+}
+
+.basket__titelHeader {
+    color         : #FFFFFF;
+    font-family   : 'Montserrat';
+    font-style    : normal;
+    font-weight   : 700;
+    font-size     : 31px;
+    line-height   : 38px;
+    text-transform: uppercase;
+    width         : 70%;
+    font-stretch  : 100%;
+}
+
+.basket__bth {
+    width           : 32px;
+    height          : 32px;
+    background-color: transparent;
+    border          : 1px solid #D58C51;
+    border-radius   : 50%;
+}
+
+.basket__bth:hover {
+    background-color: #D58C51;
+}
+
+.header__btn-exit {
+    width           : 200px;
+    height          : 42px;
+    color           : #D58C51;
+    outline         : 1px solid #D58C51;
+    cursor          : pointer;
+    background-color: transparent;
+    font-size       : 14px;
+}
+
+.header__btn-exit:hover {
+    background-color: #D58C51;
+}

@@ -9,21 +9,30 @@ import {
 import { store } from './store/index'
 import { Provider } from 'react-redux'
 import { MainCoursesPage, CoursesCartPage, AuthPage } from './pages';
+import { PrivateRoute, PublicRoute } from './components';
 
 import './index.css';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainCoursesPage />
+    element: <PrivateRoute>
+              <MainCoursesPage />
+              </PrivateRoute>
   },
   {
     path: "/cart",
-    element: <CoursesCartPage />
+    element: <PrivateRoute>
+                <CoursesCartPage />
+              </PrivateRoute>
   },
   {
     path: "/auth",
-    element: <AuthPage/>
+    element: <PublicRoute>
+                <AuthPage/>
+             </PublicRoute>
+              
+              
   }
 ]);
 

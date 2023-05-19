@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { getCartList } from "../../store/reducers/courses";
 
 import { CourseCard } from "../../components/index";
 import { CoursesHeader } from "../../components/index";
@@ -8,22 +9,18 @@ import { CoursesHeader } from "../../components/index";
 import axios from "axios";
 
 import './MainCoursesPage.css'
-import { useNavigate } from "react-router-dom";
 
 const MainCoursesPage = () => {
     const [courses, setCourses] = useState([]);
 
-    const username = useSelector(({users}) => users.username);
-
-    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(()=>{
-        if (username) {
-            axios.get('http://localhost:3001/courses')
-        .then(({ data }) => setCourses(data));
-        } else {
-            navigate('/auth')
-        }        
+        dispatch(getCartList())
+        .then((result) => console.log(result));
+
+        axios.get('http://localhost:3001/courses')
+        .then(({ data }) => setCourses(data));        
     }, []);
 
     return (

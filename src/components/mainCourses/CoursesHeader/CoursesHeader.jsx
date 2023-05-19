@@ -1,7 +1,8 @@
 import React from "react";
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
+import { logout } from "../../../store/reducers/users";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketShopping } from '@fortawesome/free-solid-svg-icons';
@@ -12,14 +13,16 @@ const CoursesHeader = ({title}) => {
     const counter = useSelector(({courses}) => courses.counter)
     const amountPrice = useSelector(({courses}) => courses.amountPrice);
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
 
     const onCartButtonClickHandler = () => {
-        return navigate("/cart");
+        navigate("/cart");
     }
 
-    const onAuthButtonClickHandler = () => {
-        return navigate("/auth");
+    let onLogout = () => {
+        navigate("/auth");
+        dispatch = (logout());
     }
 
     function declOfNum(n, text_forms) {  
@@ -37,7 +40,7 @@ const CoursesHeader = ({title}) => {
             <nav>
                 <p className="header__cartInfo">В Вашей корзине {counter} {declOfNum(counter, ['товар', 'товара', 'товаров'])} на {amountPrice} ₽</p>
                 <button className="header__btn" onClick={onCartButtonClickHandler}><FontAwesomeIcon icon={faBasketShopping} size="2xl" style={{color: "#ffffff",}} /></button>
-                <button className="header__btn-exit" onClick={onAuthButtonClickHandler}>Выйти</button>
+                <button className="header__btn-exit" onClick={onLogout}>Выйти</button>
             </nav>
         </header>
     );

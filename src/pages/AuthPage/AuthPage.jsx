@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 
 import axios from "axios";
 
-import './AuthPage.css'
 import { login } from "../../store/reducers/users";
 import { useNavigate } from "react-router-dom";
+
+import './AuthPage.css'
 
 const AuthView = () => {
     const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const AuthView = () => {
     const onLogin = () => {
         axios.post('http://localhost:3001/login', { email, password })
             .then(({data}) => dispatch(login({ 
-                accessToken: data, 
+                accessToken: data.accessToken, 
                 ...data.user, 
             })));
             navigate("/")
@@ -54,16 +55,13 @@ const RegView = () => {
 
     const [password, setPassword] = useState('');
 
-     const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
     const onRegister = () => {
         axios.post('http://localhost:3001/register', {email, password})
-            .then(({data}) => dispatch(login({ 
-                accessToken: data, 
-                ...data.user, 
-            })));
+            .then((result) => console.log(result));
             navigate("/")
     };
 

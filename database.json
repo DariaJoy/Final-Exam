@@ -1,14 +1,9 @@
 {
   "users": [
     {
-      "email": "qwerty@mail.ru",
-      "password": "$2a$10$npfaHV4IgOvJ3uoHdGCakuPZOJQ5482tTipIjJaedVZ0HhTTH4LOu",
+      "email": "ytrewq@mail.ru",
+      "password": "$2a$10$TRz0w7Mbl3X9tTpc2JKc0u9gSLfhtlWUfnaPaQj1Ci0BENmA6P8Om",
       "id": 1
-    },
-    {
-      "email": "qwerty1@mail.ru",
-      "password": "$2a$10$M/551vKM26JQWcd3zrZR8.kYEvXmpxJ27mRTLhg5jE9tSdH4BiK86",
-      "id": 2
     }
   ],
   "courses": [

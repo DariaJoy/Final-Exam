@@ -1,33 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const getFromLocalStorage = () => {
-    return {
-        email: localStorage.getItem('email') || '',
-        username: localStorage.getItem('username') || '',
-        accessToken: localStorage.getItem('accessToken') || '',
-    };
-};
-
-const saveToLocalStorage = ({ email, username, accessToken }) => {
+let saveToLocalStorage = ({ id, email, accessToken }) => {
+    localStorage.setItem('id', id);
     localStorage.setItem('email', email);
-    localStorage.setItem('username', username);
     localStorage.setItem('accessToken', accessToken);
 };
 
-export const usersSlice = createSlice({
+let getFromLocalStorage = () => ({
+        id: localStorage.getItem('id') || '',     
+        email: localStorage.getItem('email') || '',
+        accessToken: localStorage.getItem('accessToken') || '',   
+});
+
+export let usersSlice = createSlice({
     name: 'users',
     initialState: getFromLocalStorage(),
     reducers: {
         login: (state, { payload }) => {
-            const { email, username, accessToken } = payload;
+            let { id, email, accessToken } = payload;
+            state.id = id;
             state.email = email;
-            state.username = username;
             state.accessToken = accessToken;
             saveToLocalStorage(payload);
-        },      
+        }, 
+        logout: (state) => {
+            saveToLocalStorage = ({ id: '', email: '', accessToken: '' });
+            state.id = localStorage.getItem('id') || '';
+            state.email = localStorage.getItem('email') || '';
+            state.accessToken = localStorage.getItem('accessToken') || '';
+        },  
     },
-})
+});
 
-export const { login } = usersSlice.actions
+export let { login, logout } = usersSlice.actions
 
 export default usersSlice.reducer
